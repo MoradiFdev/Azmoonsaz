@@ -16,8 +16,37 @@ let selectedchapter = document.querySelector('.selectedchapter');
 let dropdownwrapper = document.querySelectorAll('.dropdown-wrapper');
 let dropdowncontent = document.querySelectorAll('.dropdown-content');
 let headerlowerelements = document.querySelector('.header-lower-elements');
-let headerbtn = document.querySelector('.header-upper-elements');
 let main = document.querySelector('.main');
+var questionstable = document.querySelector('.questionstable');
+var marks = document.querySelectorAll('.marks');
+var markinput = document.querySelectorAll('.markinput');
+var nums = document.getElementsByClassName('questionnumber');
+var kl=0;
+
+function set_sum(){
+   let sumofmarks=document.querySelector('.sumofmarks');
+   let markinput = document.querySelectorAll('.markinput');
+   kl=0;
+    for (i = 0; i < markinput.length; i++){
+        if (markinput[i].value==""){
+            kl+=0;
+        }
+        else{
+            kl+= parseFloat(markinput[i].value);
+        }
+    }
+    if (isNaN(kl)){
+        sumofmarks.innerHTML="";
+    }
+    else{
+       sumofmarks.innerHTML=kl;
+    }
+}
+
+qtablewrapper.addEventListener('mouseover', function(){
+    set_sum();
+});
+
 
 for (let i = 0; i < dropdowncontent.length; i++) {
     dropdowncontent[i].addEventListener('click', function () {
@@ -42,13 +71,6 @@ for (let i = 0; i < dropdownwrapper.length; i++) {
     });
 }
 
-window.addEventListener('scroll', function () {
-    headerbtn.style.top = '-50px';
-});
-
-window.addEventListener('scrollend', function () {
-    headerbtn.style.top = '0';
-});
 
 let mathsource = [
     [//کتاب ریاضی هفتم
@@ -1116,9 +1138,459 @@ let mathsource = [
     './images/math/10t/ch1/1.png',
     './images/math/10t/ch1/2.png',
     './images/math/10t/ch1/3.png',
+    './images/math/10t/ch1/4.png',
+    './images/math/10t/ch1/5.png',
+    './images/math/10t/ch1/6.png',
+    './images/math/10t/ch1/7.png',
+    './images/math/10t/ch1/8.png',
+    './images/math/10t/ch1/9.png',
+    './images/math/10t/ch1/10.png',
+    './images/math/10t/ch1/11.png',
+    './images/math/10t/ch1/12.png',
+    './images/math/10t/ch1/13.png',
+    './images/math/10t/ch1/14.png',
+    './images/math/10t/ch1/15.png',
+    './images/math/10t/ch1/16.png',
+    './images/math/10t/ch1/17.png',
+    './images/math/10t/ch1/18.png',
+    './images/math/10t/ch1/19.png',
+    './images/math/10t/ch1/20.png',
+    './images/math/10t/ch1/21.png',
+    './images/math/10t/ch1/22.png',
+    './images/math/10t/ch1/23.png',
+    './images/math/10t/ch1/24.png',
+    './images/math/10t/ch1/25.png',
+    './images/math/10t/ch1/26.png',
+    './images/math/10t/ch1/27.png',
+    './images/math/10t/ch1/28.png',
+    './images/math/10t/ch1/29.png',
+    './images/math/10t/ch1/30.png',
+    './images/math/10t/ch1/31.png',
+    './images/math/10t/ch1/32.png',
+    './images/math/10t/ch1/33.png',
+    './images/math/10t/ch1/34.png',
+    './images/math/10t/ch1/35.png',
+    './images/math/10t/ch1/36.png',
+    './images/math/10t/ch1/37.png',
+    './images/math/10t/ch1/38.png',
+    './images/math/10t/ch1/39.png',
+    './images/math/10t/ch1/40.png',
+    './images/math/10t/ch1/41.png',
+    './images/math/10t/ch1/42.png',
+    './images/math/10t/ch1/43.png',
+    './images/math/10t/ch1/44.png',
+    './images/math/10t/ch1/45.png',
+    './images/math/10t/ch1/46.png',
+    './images/math/10t/ch1/47.png',
+    './images/math/10t/ch1/48.png',
+    './images/math/10t/ch1/49.png',
+    './images/math/10t/ch1/50.png',
+    './images/math/10t/ch1/51.png',
+    './images/math/10t/ch1/52.png',
+    './images/math/10t/ch1/53.png',
+    './images/math/10t/ch1/54.png',
+    './images/math/10t/ch1/55.png',
+    './images/math/10t/ch1/56.png',
+],//پایان فصل اول- دهم تجربی
+[// فصل دوم- دهم تجربی
+    './images/math/10t/ch2/1.png',
+    './images/math/10t/ch2/2.png',
+    './images/math/10t/ch2/3.png',
+    './images/math/10t/ch2/4.png',
+    './images/math/10t/ch2/5.png',
+    './images/math/10t/ch2/6.png',
+    './images/math/10t/ch2/7.png',
+    './images/math/10t/ch2/8.png',
+    './images/math/10t/ch2/9.png',
+    './images/math/10t/ch2/10.png',
+    './images/math/10t/ch2/11.png',
+    './images/math/10t/ch2/12.png',
+    './images/math/10t/ch2/13.png',
+    './images/math/10t/ch2/14.png',
+    './images/math/10t/ch2/15.png',
+    './images/math/10t/ch2/16.png',
+    './images/math/10t/ch2/17.png',
+    './images/math/10t/ch2/18.png',
+    './images/math/10t/ch2/19.png',
+    './images/math/10t/ch2/20.png',
+    './images/math/10t/ch2/21.png',
+    './images/math/10t/ch2/22.png',
+    './images/math/10t/ch2/23.png',
+    './images/math/10t/ch2/24.png',
+    './images/math/10t/ch2/25.png',
+    './images/math/10t/ch2/26.png',
+    './images/math/10t/ch2/27.png',
+    './images/math/10t/ch2/28.png',
+],//پایان فصل دوم- ریاضی دهم تجربی
+[//فصل سوم
+    './images/math/10t/ch3/1.png',
+    './images/math/10t/ch3/2.png',
+    './images/math/10t/ch3/3.png',
+    './images/math/10t/ch3/4.png',
+    './images/math/10t/ch3/5.png',
+    './images/math/10t/ch3/6.png',
+    './images/math/10t/ch3/7.png',
+    './images/math/10t/ch3/8.png',
+    './images/math/10t/ch3/9.png',
+    './images/math/10t/ch3/10.png',
+    './images/math/10t/ch3/11.png',
+    './images/math/10t/ch3/12.png',
+    './images/math/10t/ch3/13.png',
+    './images/math/10t/ch3/14.png',
+    './images/math/10t/ch3/15.png',
+    './images/math/10t/ch3/16.png',
+    './images/math/10t/ch3/17.png',
+    './images/math/10t/ch3/18.png',
+    './images/math/10t/ch3/19.png',
+    './images/math/10t/ch3/20.png',
+    './images/math/10t/ch3/21.png',
+    './images/math/10t/ch3/22.png',
+    './images/math/10t/ch3/23.png',
+    './images/math/10t/ch3/24.png',//تا ص 61 پایان درس3
   
 
 ],
+],
+
+[//ریاضی یازدهم تجربی
+[//فصل اول
+    './images/math/11t/ch1/1.png',
+    './images/math/11t/ch1/2.png',
+    './images/math/11t/ch1/3.png',
+    './images/math/11t/ch1/4.png',
+    './images/math/11t/ch1/5.png',
+    './images/math/11t/ch1/6.png',
+    './images/math/11t/ch1/7.png',
+    './images/math/11t/ch1/8.png',
+    './images/math/11t/ch1/9.png',
+    './images/math/11t/ch1/10.png',
+    './images/math/11t/ch1/11.png',
+    './images/math/11t/ch1/12.png',
+    './images/math/11t/ch1/13.png',
+    './images/math/11t/ch1/14.png',
+    './images/math/11t/ch1/15.png',
+    './images/math/11t/ch1/16.png',
+    './images/math/11t/ch1/17.png',
+    './images/math/11t/ch1/18.png',
+    './images/math/11t/ch1/19.png',
+    './images/math/11t/ch1/20.png',
+    './images/math/11t/ch1/21.png',
+    './images/math/11t/ch1/22.png',
+    './images/math/11t/ch1/23.png',
+    './images/math/11t/ch1/24.png',
+    './images/math/11t/ch1/25.png',
+    './images/math/11t/ch1/26.png',
+    './images/math/11t/ch1/27.png',
+    './images/math/11t/ch1/28.png',
+    './images/math/11t/ch1/29.png',
+    './images/math/11t/ch1/30.png',
+    './images/math/11t/ch1/31.png',
+    './images/math/11t/ch1/32.png',
+    './images/math/11t/ch1/33.png',
+    './images/math/11t/ch1/34.png',
+    './images/math/11t/ch1/35.png',
+    './images/math/11t/ch1/36.png',
+    './images/math/11t/ch1/37.png',
+    './images/math/11t/ch1/38.png',
+    './images/math/11t/ch1/39.png',
+    './images/math/11t/ch1/40.png',
+    './images/math/11t/ch1/41.png',
+    './images/math/11t/ch1/42.png',
+    './images/math/11t/ch1/43.png',
+    './images/math/11t/ch1/44.png',
+    './images/math/11t/ch1/45.png',
+    './images/math/11t/ch1/46.png',
+    './images/math/11t/ch1/47.png',
+    './images/math/11t/ch1/48.png',
+    './images/math/11t/ch1/49.png',
+    './images/math/11t/ch1/50.png',
+    './images/math/11t/ch1/51.png',
+    './images/math/11t/ch1/52.png',
+    './images/math/11t/ch1/53.png',
+    './images/math/11t/ch1/54.png',
+    './images/math/11t/ch1/55.png',
+    './images/math/11t/ch1/56.png',
+    './images/math/11t/ch1/57.png',
+],//پایان فصل اول- ریاضی یازدهم تجربی
+[//فصل دوم
+    './images/math/11t/ch2/1.png',
+    './images/math/11t/ch2/2.png',
+    './images/math/11t/ch2/3.png',
+    './images/math/11t/ch2/4.png',
+    './images/math/11t/ch2/5.png',
+    './images/math/11t/ch2/6.png',
+    './images/math/11t/ch2/7.png',
+    './images/math/11t/ch2/8.png',
+    './images/math/11t/ch2/9.png',
+    './images/math/11t/ch2/10.png',
+    './images/math/11t/ch2/11.png',
+    './images/math/11t/ch2/12.png',
+    './images/math/11t/ch2/13.png',
+    './images/math/11t/ch2/14.png',
+    './images/math/11t/ch2/15.png',
+    './images/math/11t/ch2/16.png',
+    './images/math/11t/ch2/17.png',
+    './images/math/11t/ch2/18.png',
+    './images/math/11t/ch2/19.png',
+    './images/math/11t/ch2/20.png',
+    './images/math/11t/ch2/21.png',
+    './images/math/11t/ch2/22.png',
+    './images/math/11t/ch2/23.png',
+    './images/math/11t/ch2/24.png',
+    './images/math/11t/ch2/25.png',
+    './images/math/11t/ch2/26.png',
+    './images/math/11t/ch2/27.png',
+    './images/math/11t/ch2/28.png',
+    './images/math/11t/ch2/29.png',
+    './images/math/11t/ch2/30.png',
+    './images/math/11t/ch2/31.png',
+    './images/math/11t/ch2/32.png',
+    './images/math/11t/ch2/33.png',
+    './images/math/11t/ch2/34.png',
+    './images/math/11t/ch2/35.png',
+    './images/math/11t/ch2/36.png',
+    './images/math/11t/ch2/37.png',
+    './images/math/11t/ch2/38.png',
+    './images/math/11t/ch2/39.png',
+],//پایان فصل دوم- یازدهم تجربی
+[//فصل سوم
+    './images/math/11t/ch3/1.png',
+    './images/math/11t/ch3/2.png',
+    './images/math/11t/ch3/3.png',
+    './images/math/11t/ch3/4.png',
+    './images/math/11t/ch3/5.png',
+    './images/math/11t/ch3/6.png',
+    './images/math/11t/ch3/7.png',
+    './images/math/11t/ch3/8.png',
+    './images/math/11t/ch3/9.png',
+    './images/math/11t/ch3/10.png',
+    './images/math/11t/ch3/11.png',
+    './images/math/11t/ch3/12.png',
+    './images/math/11t/ch3/13.png',
+    './images/math/11t/ch3/14.png',// فصل 3 تا پایان درس1
+],
+
+],
+
+[//ریاضی دوازدهم تجربی
+[//فصل اول
+    './images/math/12t/ch1/1.png',
+    './images/math/12t/ch1/2.png',
+    './images/math/12t/ch1/3.png',
+    './images/math/12t/ch1/4.png',
+    './images/math/12t/ch1/5.png',
+    './images/math/12t/ch1/6.png',
+    './images/math/12t/ch1/7.png',
+    './images/math/12t/ch1/8.png', 
+    './images/math/12t/ch1/9.png', 
+    './images/math/12t/ch1/10.png', 
+    './images/math/12t/ch1/11.png', 
+    './images/math/12t/ch1/12.png', 
+    './images/math/12t/ch1/13.png', 
+    './images/math/12t/ch1/14.png', 
+    './images/math/12t/ch1/15.png', 
+    './images/math/12t/ch1/16.png', 
+    './images/math/12t/ch1/17.png', 
+    './images/math/12t/ch1/18.png', 
+    './images/math/12t/ch1/19.png', 
+    './images/math/12t/ch1/20.png', 
+    './images/math/12t/ch1/21.png', 
+    './images/math/12t/ch1/22.png', 
+    './images/math/12t/ch1/23.png', 
+    './images/math/12t/ch1/24.png', 
+    './images/math/12t/ch1/25.png', 
+    './images/math/12t/ch1/26.png', 
+    './images/math/12t/ch1/27.png', 
+    './images/math/12t/ch1/28.png', 
+    './images/math/12t/ch1/29.png', 
+    './images/math/12t/ch1/30.png', 
+    './images/math/12t/ch1/31.png', 
+    './images/math/12t/ch1/32.png', 
+    './images/math/12t/ch1/33.png', 
+    './images/math/12t/ch1/34.png', 
+    './images/math/12t/ch1/35.png', 
+    './images/math/12t/ch1/36.png', 
+    './images/math/12t/ch1/37.png', 
+    './images/math/12t/ch1/38.png', 
+    './images/math/12t/ch1/39.png', 
+],//پایان فص اول- دوازدهم تجربی
+[//فصل دوم
+    './images/math/12t/ch2/1.png', 
+    './images/math/12t/ch2/2.png', 
+    './images/math/12t/ch2/3.png', 
+    './images/math/12t/ch2/4.png', 
+    './images/math/12t/ch2/5.png', 
+    './images/math/12t/ch2/6.png', 
+    './images/math/12t/ch2/7.png', 
+    './images/math/12t/ch2/8.png', 
+    './images/math/12t/ch2/9.png', 
+    './images/math/12t/ch2/10.png', 
+    './images/math/12t/ch2/11.png', 
+    './images/math/12t/ch2/12.png', 
+    './images/math/12t/ch2/13.png', 
+    './images/math/12t/ch2/14.png', 
+    './images/math/12t/ch2/15.png', 
+    './images/math/12t/ch2/16.png', 
+    './images/math/12t/ch2/17.png', 
+    './images/math/12t/ch2/18.png', 
+    './images/math/12t/ch2/19.png', 
+    './images/math/12t/ch2/20.png', 
+    './images/math/12t/ch2/21.png', 
+    './images/math/12t/ch2/22.png', 
+    './images/math/12t/ch2/23.png', 
+    './images/math/12t/ch2/24.png', 
+    './images/math/12t/ch2/25.png', 
+    './images/math/12t/ch2/26.png', 
+    './images/math/12t/ch2/27.png', 
+],//پایان فصل دوم- دوازدهم تجربی
+[//فصل سوم
+    './images/math/12t/ch3/1.png', 
+    './images/math/12t/ch3/2.png', 
+    './images/math/12t/ch3/3.png', 
+    './images/math/12t/ch3/4.png', 
+    './images/math/12t/ch3/5.png', 
+    './images/math/12t/ch3/6.png', 
+    './images/math/12t/ch3/7.png', 
+    './images/math/12t/ch3/8.png', 
+    './images/math/12t/ch3/9.png', 
+    './images/math/12t/ch3/10.png', 
+    './images/math/12t/ch3/11.png', 
+    './images/math/12t/ch3/12.png', 
+    './images/math/12t/ch3/13.png', 
+    './images/math/12t/ch3/14.png', 
+    './images/math/12t/ch3/15.png', 
+    './images/math/12t/ch3/16.png', 
+    './images/math/12t/ch3/17.png', 
+    './images/math/12t/ch3/18.png', 
+    './images/math/12t/ch3/19.png', 
+    './images/math/12t/ch3/20.png', 
+    './images/math/12t/ch3/21.png', 
+    './images/math/12t/ch3/22.png', 
+    './images/math/12t/ch3/23.png', 
+    './images/math/12t/ch3/24.png', 
+    './images/math/12t/ch3/25.png', 
+    './images/math/12t/ch3/26.png', 
+    './images/math/12t/ch3/27.png', 
+    './images/math/12t/ch3/28.png', 
+    './images/math/12t/ch3/29.png', 
+    './images/math/12t/ch3/30.png', 
+    './images/math/12t/ch3/31.png', 
+    './images/math/12t/ch3/32.png', 
+    './images/math/12t/ch3/33.png', 
+    './images/math/12t/ch3/34.png', 
+    './images/math/12t/ch3/35.png', 
+    './images/math/12t/ch3/36.png', 
+],//پایان فصل سوم- دوازدهم تجربی
+
+],
+[//دهم انسانی
+[//فصل اول
+    './images/math/10en/ch1/1.png',
+    './images/math/10en/ch1/2.png',
+    './images/math/10en/ch1/3.png',
+    './images/math/10en/ch1/4.png',
+    './images/math/10en/ch1/5.png',
+    './images/math/10en/ch1/6.png',
+    './images/math/10en/ch1/7.png',
+    './images/math/10en/ch1/8.png',
+    './images/math/10en/ch1/9.png',
+    './images/math/10en/ch1/10.png',
+    './images/math/10en/ch1/11.png',
+    './images/math/10en/ch1/12.png',
+    './images/math/10en/ch1/13.png',
+    './images/math/10en/ch1/14.png',
+    './images/math/10en/ch1/15.png',
+    './images/math/10en/ch1/16.png',
+    './images/math/10en/ch1/17.png',
+    './images/math/10en/ch1/18.png',
+    './images/math/10en/ch1/19.png',
+    './images/math/10en/ch1/20.png',
+    './images/math/10en/ch1/21.png',
+    './images/math/10en/ch1/22.png',
+    './images/math/10en/ch1/23.png',
+    './images/math/10en/ch1/24.png',
+    './images/math/10en/ch1/25.png',
+    './images/math/10en/ch1/26.png',
+    './images/math/10en/ch1/27.png',
+    './images/math/10en/ch1/28.png',
+    './images/math/10en/ch1/29.png',
+    './images/math/10en/ch1/30.png',
+    './images/math/10en/ch1/31.png',
+    './images/math/10en/ch1/32.png',
+    './images/math/10en/ch1/33.png',
+    './images/math/10en/ch1/34.png',
+],
+],
+[//یازدهم انسانی
+[//فصل اول
+   './images/math/11en/ch1/1.png', 
+   './images/math/11en/ch1/2.png', 
+   './images/math/11en/ch1/3.png', 
+   './images/math/11en/ch1/4.png', 
+   './images/math/11en/ch1/5.png', 
+   './images/math/11en/ch1/6.png', 
+   './images/math/11en/ch1/7.png', 
+   './images/math/11en/ch1/8.png', 
+   './images/math/11en/ch1/9.png', 
+   './images/math/11en/ch1/10.png', 
+   './images/math/11en/ch1/11.png', 
+   './images/math/11en/ch1/12.png', 
+   './images/math/11en/ch1/13.png', 
+   './images/math/11en/ch1/14.png', 
+   './images/math/11en/ch1/15.png', 
+   './images/math/11en/ch1/16.png', 
+   './images/math/11en/ch1/17.png', 
+   './images/math/11en/ch1/18.png', 
+   './images/math/11en/ch1/19.png', 
+   './images/math/11en/ch1/20.png', 
+   './images/math/11en/ch1/21.png', 
+   './images/math/11en/ch1/22.png', 
+   './images/math/11en/ch1/23.png', 
+   './images/math/11en/ch1/24.png', 
+   './images/math/11en/ch1/25.png', 
+   './images/math/11en/ch1/26.png', 
+   './images/math/11en/ch1/27.png', 
+   './images/math/11en/ch1/28.png', 
+   './images/math/11en/ch1/29.png', 
+   './images/math/11en/ch1/30.png', 
+   './images/math/11en/ch1/31.png', 
+   './images/math/11en/ch1/32.png', 
+   './images/math/11en/ch1/33.png', 
+   './images/math/11en/ch1/34.png', 
+   './images/math/11en/ch1/35.png', 
+
+],
+
+
+],
+[],
+[//دهم کاردانش
+[//پودمان اول
+    './images/math/10kd/ch1/1.png',
+    './images/math/10kd/ch1/2.png',
+    './images/math/10kd/ch1/3.png',
+    './images/math/10kd/ch1/4.png',
+    './images/math/10kd/ch1/5.png',
+    './images/math/10kd/ch1/6.png',
+    './images/math/10kd/ch1/7.png',
+    './images/math/10kd/ch1/8.png',
+    './images/math/10kd/ch1/9.png',
+    './images/math/10kd/ch1/10.png',
+    './images/math/10kd/ch1/11.png',
+    './images/math/10kd/ch1/12.png',
+    './images/math/10kd/ch1/13.png',
+    './images/math/10kd/ch1/14.png',
+    './images/math/10kd/ch1/15.png',
+    './images/math/10kd/ch1/16.png',
+    './images/math/10kd/ch1/17.png',
+    './images/math/10kd/ch1/18.png',
+    './images/math/10kd/ch1/19.png',
+    './images/math/10kd/ch1/20.png',
+    './images/math/10kd/ch1/21.png',
+    './images/math/10kd/ch1/22.png',
+    './images/math/10kd/ch1/23.png',
+    './images/math/10kd/ch1/24.png',
+],//پایان پودمان اول
 
 ],
 ];
@@ -1182,14 +1654,11 @@ function loadques(gradenumber, chapternumber) {
         newqlRow.className = "qlrow";
         qlist.appendChild(newqlRow);
         var cell1 = newqlRow.insertCell();
-        
-            cell1.innerHTML = k + 1;
-        
+        cell1.innerHTML = k + 1;
         plusq = document.createElement('div');
         plusq.className = "plus";
         plusq.title = "برای اضافه شدن این سؤال به فرم سؤالات، کلیک کنید.";
         cell1.appendChild(plusq);
-        // cell1.className="questionlnumber";
         var cell2 = newqlRow.insertCell();
         cell2.className = 'lquestions';
         var imgl = document.createElement('img');
@@ -1225,11 +1694,29 @@ function loadques(gradenumber, chapternumber) {
             })
         })
         cell2.appendChild(imgl);
+        
     }
+
 }
+
+numbering.addEventListener('click', function () {
+    numbering_isclicked = true;
+    let markinput = document.querySelectorAll('.markinput');
+    let marks = document.querySelectorAll('.marks');
+    for (i = 1; i < nums.length; i++) {
+        nums[i].innerHTML = i;
+    }
+    for (i = 0; i < inputs.length; i++) {
+        inputs[i].innerHTML = inputwrapper[i].value;
+    }
+    for (i = 0; i < markinput.length; i++) {
+        marks[i+1].innerHTML = markinput[i].value;
+    }
+});
 
 insertallquestions.addEventListener('click', function () {
     clearformquestions();
+    set_sum();
     var w = document.querySelectorAll('.lquestions');
     var z = document.querySelectorAll('.questions');
     var imgl = document.querySelectorAll('.limage');
@@ -1263,27 +1750,12 @@ insertallquestions.addEventListener('click', function () {
     qtable.appendChild(newqfRow);
 })
 
-numbering.addEventListener('click', function () {
-    var nums = document.getElementsByClassName('questionnumber');
-    for (var i = 1; i < nums.length; i++) {
-        nums[i].innerHTML = i;
-    }
-    for (var i = 0; i < inputs.length; i++) {
-        inputs[i].innerHTML = inputwrapper[i].value;
-    }
-    let marks = document.querySelectorAll('.marks');
-    let markinput = document.querySelectorAll('.markinput');
-    for (var i = 0; i < markinput.length; i++) {
-        marks[i + 1].innerHTML = markinput[i].value;
-    }
-})
-
 sendtoPDF.addEventListener('click', function () {
     let cloneNode =
     qtablewrapper.cloneNode(true);
     let printWindow = window.open('', '_blank');
     printWindow.document.write("<html><head><title></title>");
-    printWindow.document.write("<link rel='stylesheet' type='text/css' href='./style1.css'>");
+    printWindow.document.write("<link rel='stylesheet' type='text/css' href='./style.css'>");
     printWindow.document.write("</head><body>");
     printWindow.document.write(cloneNode.innerHTML);
     printWindow.document.write("</body></html>");
@@ -1292,14 +1764,16 @@ sendtoPDF.addEventListener('click', function () {
     printWindow.onload = function(){
         printWindow.print();
         printWindow.close();
-
     };
 });
 
-clearall.addEventListener('click', clearformquestions);
+clearall.addEventListener('click', function(){
+    clearformquestions();
+    set_sum();
+});
 
 function clearlistquestions() {
-    for (var i = 0; ; i++) {
+    for (i = 0; ; i++) {
         var row = document.querySelectorAll('.qlrow');
         if (row.length > 0) {
             qlist.deleteRow(1);
@@ -1309,7 +1783,7 @@ function clearlistquestions() {
 }
 
 function clearformquestions() {
-    for (var i = 0; ; i++) {
+    for (i = 0; ; i++) {
         var row = document.querySelectorAll('.qfrow');
         if (row.length > 0) {
             qtable.deleteRow(1);
@@ -1320,6 +1794,5 @@ function clearformquestions() {
         inputs[i].innerHTML = "";
     }
     npages.innerHTML = "";
-
 }
 

@@ -21,7 +21,8 @@ var questionstable = document.querySelector('.questionstable');
 var marks = document.querySelectorAll('.marks');
 var markinput = document.querySelectorAll('.markinput');
 var nums = document.getElementsByClassName('questionnumber');
-var kl=0;
+var kl = 0;
+var numbering_isclicked = false;
 
 function set_sum(){
    let sumofmarks=document.querySelector('.sumofmarks');
@@ -44,7 +45,9 @@ function set_sum(){
 }
 
 qtablewrapper.addEventListener('mouseover', function(){
-    set_sum();
+    if (!numbering_isclicked){
+        set_sum();
+    }
 });
 
 
@@ -1767,6 +1770,44 @@ let mathsource = [
     './images/math/10kd/ch1/23.png',
     './images/math/10kd/ch1/24.png',
 ],//پایان پودمان اول
+[//پودمان دوم
+    './images/math/10kd/ch2/1.png',
+    './images/math/10kd/ch2/2.png',
+    './images/math/10kd/ch2/3.png',
+    './images/math/10kd/ch2/4.png',
+    './images/math/10kd/ch2/5.png',
+    './images/math/10kd/ch2/6.png',
+    './images/math/10kd/ch2/7.png',
+    './images/math/10kd/ch2/8.png',
+    './images/math/10kd/ch2/9.png',
+    './images/math/10kd/ch2/10.png',
+    './images/math/10kd/ch2/11.png',
+    './images/math/10kd/ch2/12.png',
+    './images/math/10kd/ch2/13.png',
+    './images/math/10kd/ch2/14.png',
+    './images/math/10kd/ch2/15.png',
+    './images/math/10kd/ch2/16.png',
+    './images/math/10kd/ch2/17.png',
+    './images/math/10kd/ch2/18.png',
+    './images/math/10kd/ch2/19.png',
+    './images/math/10kd/ch2/20.png',
+    './images/math/10kd/ch2/21.png',
+    './images/math/10kd/ch2/22.png',
+    './images/math/10kd/ch2/23.png',
+    './images/math/10kd/ch2/24.png',
+    './images/math/10kd/ch2/25.png',
+    './images/math/10kd/ch2/26.png',
+    './images/math/10kd/ch2/27.png',
+    './images/math/10kd/ch2/28.png',
+    './images/math/10kd/ch2/29.png',
+    './images/math/10kd/ch2/30.png',
+    './images/math/10kd/ch2/31.png',
+    './images/math/10kd/ch2/32.png',
+    './images/math/10kd/ch2/33.png',
+    './images/math/10kd/ch2/34.png',
+    './images/math/10kd/ch2/35.png',
+    './images/math/10kd/ch2/36.png',
+],//پایان پودمان دوم
 
 ],
 ];
@@ -1944,6 +1985,7 @@ sendtoPDF.addEventListener('click', function () {
 });
 
 clearall.addEventListener('click', function(){
+    numbering_isclicked = false;
     clearformquestions();
     set_sum();
 });
